@@ -1,0 +1,20 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-sisolarapply-dev-3c43e-authRole",
+      "UnauthRoleArn": "arn:aws:iam::471112662836:role/amplify-sisolarapply-dev-3c43e-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::471112662836:role/amplify-sisolarapply-dev-3c43e-authRole",
+      "Region": "ap-northeast-1",
+      "DeploymentBucketName": "amplify-sisolarapply-dev-3c43e-deployment",
+      "UnauthRoleName": "amplify-sisolarapply-dev-3c43e-unauthRole",
+      "StackName": "amplify-sisolarapply-dev-3c43e",
+      "StackId": "arn:aws:cloudformation:ap-northeast-1:471112662836:stack/amplify-sisolarapply-dev-3c43e/4a6f0da0-1353-11ef-96c2-0ed20f57491d",
+      "AmplifyAppId": "da0hij9er892p"
+    },
+    "categories": {
+      "auth": {
+        "sisolarapply6bc80af1": {}
+      }
+    }
+  }
+}

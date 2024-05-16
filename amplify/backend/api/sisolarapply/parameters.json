@@ -1,0 +1,5 @@
+{
+  "AppSyncApiName": "sisolarapply",
+  "DynamoDBBillingMode": "PAY_PER_REQUEST",
+  "DynamoDBEnableServerSideEncryption": false
+}

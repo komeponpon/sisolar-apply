@@ -1,0 +1,30 @@
+# This "input" configures a global authorization rule to enable public access to
+# all models in this schema. Learn more about authorization rules here: https://docs.amplify.aws/cli/graphql/authorization-rules
+input AMPLIFY { globalAuthRule: AuthRule = { allow: public } } # FOR TESTING ONLY!
+
+type 工務店 @model {
+  id: ID!
+  companyName: String!
+  mailAddress: String!
+  loginID: String!
+  password: String!
+  申請処理: [申請処理] @connection(keyName: "byCompany", fields: ["id"])
+}
+
+type 申請処理 @model @key(name: "byCompany", fields: ["companyId"]) {
+  id: ID!
+  companyId: ID!
+  propertyName: String!
+  propertyAddress: String!
+  remarks: String
+  responseStatus: String!
+  applyDateTime: AWSDateTime!
+  files: [ファイル] @connection(keyName: "byApply", fields: ["id"])
+}
+
+type ファイル @model @key(name: "byApply", fields: ["applyId"]) {
+  id: ID!
+  applyId: ID!
+  fileType: String!
+  fileName: String!
+}
