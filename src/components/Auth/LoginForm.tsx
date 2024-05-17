@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { useRouter } from 'next/router';
-import { withAuthenticator } from '@aws-amplify/ui-react';
+import { Authenticator, useAuthenticator } from '@aws-amplify/ui-react';
 import Box from '@mui/joy/Box';
 import Button from '@mui/joy/Button';
 import FormControl from '@mui/joy/FormControl';
@@ -60,4 +60,24 @@ function LoginForm() {
   );
 }
 
-export default withAuthenticator(LoginForm);
+function CustomAuthenticator() {
+  const { signOut, user } = useAuthenticator();
+
+  if (user) {
+    return (
+      <Box>
+        <Button onClick={signOut}>ログアウト</Button>
+      </Box>
+    );
+  }
+
+  return <LoginForm />;
+}
+
+export default function App() {
+  return (
+    <Authenticator.Provider>
+      <CustomAuthenticator />
+    </Authenticator.Provider>
+  );
+}
